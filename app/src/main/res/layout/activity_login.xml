@@ -23,6 +23,19 @@
     <EditText
         android:layout_width="@dimen/width_fields"
         android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/id_campoEmail"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:background="#ffffff"
+        android:hint="Email"
+        android:padding="@dimen/padding_fields" />
+
+    <EditText
+        android:layout_width="@dimen/width_fields"
+        android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/id_campoSenha"
@@ -36,32 +49,19 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Entrar"
-        android:id="@+id/id_botaoEntrar"
-        android:layout_below="@+id/id_campoSenha"
-        android:layout_alignEnd="@+id/id_campoSenha"
-        android:layout_marginTop="30dp"
-        android:textColor="#000000" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Criar Conta"
         android:id="@+id/id_botaoCriarConta"
         android:layout_alignBottom="@+id/id_botaoEntrar"
         android:layout_toStartOf="@+id/id_botaoEntrar"
         android:textColor="#000000" />
 
-    <EditText
-        android:layout_width="@dimen/width_fields"
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/id_campoEmail"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:background="#ffffff"
-        android:hint="Email"
-        android:padding="@dimen/padding_fields" />
+        android:text="Entrar"
+        android:id="@+id/id_botaoEntrar"
+        android:layout_below="@+id/id_campoSenha"
+        android:layout_alignEnd="@+id/id_campoSenha"
+        android:layout_marginTop="30dp"
+        android:textColor="#000000" />
 </RelativeLayout>
