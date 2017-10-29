@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        meuDB = new DatabaseHelper(this);
+        //meuDB = new DatabaseHelper(this); Deletar essa linha? Ela se repete logo abaixo.
 
         //Elementos da tela
         botaoCriarConta = (Button) findViewById(R.id.id_botaoCriarConta);
@@ -54,10 +54,8 @@ public class LoginActivity extends AppCompatActivity {
                     // Essa foi a única maneira que consegui fazer o rawQuery funcionar, não testei ainda
                     // TODO criar método para buscar todos os dados no DB
                     Cursor cursor = meuDB.pegarDados(email);
-                    cursor.moveToFirst();
 
-                    // TODO Condição sempre true, consertar
-                    if (cursor != null) {
+                    if (cursor != null && cursor.getCount()>0) {
                         //Guardando os indices das colunas do 'cursor' dentro de variáveis mais legíveis .
                         int indiceColunaEmail = cursor.getColumnIndex("usuario_email");
                         int indiceColunaSenha = cursor.getColumnIndex("usuario_senha");
@@ -68,7 +66,6 @@ public class LoginActivity extends AppCompatActivity {
                         } else {
                             Toast.makeText(getApplicationContext(), "Email ou Senha não encontrados.", Toast.LENGTH_LONG).show();
                         }
-
                     } else {
                         Toast.makeText(getApplicationContext(), "Email ou Senha não encontrados.", Toast.LENGTH_LONG).show();
                     }

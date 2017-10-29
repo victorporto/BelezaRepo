@@ -21,16 +21,17 @@
         android:textColor="#ffffff" />
 
     <EditText
+        android:id="@+id/id_campoEmail"
         android:layout_width="@dimen/width_fields"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/id_campoEmail"
-        android:layout_marginTop="50dp"
+        android:layout_alignParentEnd="false"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
         android:background="#ffffff"
+        android:ems="10"
         android:hint="Email"
+        android:inputType="textEmailAddress"
         android:padding="@dimen/padding_fields" />
 
     <EditText

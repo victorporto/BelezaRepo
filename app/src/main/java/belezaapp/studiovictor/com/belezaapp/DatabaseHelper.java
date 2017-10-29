@@ -26,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS " + NOME_TABELA + " ()");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + NOME_TABELA + " (usuario_nome VARCHAR, usuario_cpf VARCHAR, usuario_email VARCHAR, usuario_senha VARCHAR)");
     }
 
     @Override
@@ -54,6 +54,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor pegarDados(String email){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + NOME_TABELA + " WHERE usuario_email = '" + email + "'", null);
+        cursor.moveToFirst();
         return cursor;
     }
 }

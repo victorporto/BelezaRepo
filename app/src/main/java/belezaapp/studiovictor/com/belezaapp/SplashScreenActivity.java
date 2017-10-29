@@ -18,12 +18,6 @@ public class SplashScreenActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        try {
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
         //Faz a transição com delay de 2 segundos.
         new Handler().postDelayed(new Runnable() {
             @Override
