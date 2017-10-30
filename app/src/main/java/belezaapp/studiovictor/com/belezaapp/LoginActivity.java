@@ -3,6 +3,7 @@ package belezaapp.studiovictor.com.belezaapp;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +20,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        //meuDB = new DatabaseHelper(this); Deletar essa linha? Ela se repete logo abaixo.
+
+        //Esconde a 'ActionBar' da 'SplashScreenActivity'
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         //Elementos da tela
         botaoCriarConta = (Button) findViewById(R.id.id_botaoCriarConta);
@@ -62,7 +66,8 @@ public class LoginActivity extends AppCompatActivity {
 
                         if (email.equals(cursor.getString(indiceColunaEmail))
                          && senha.equals(cursor.getString(indiceColunaSenha))) {
-                            Toast.makeText(getApplicationContext(), "Achou resultado!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Login realizado com sucesso!", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         } else {
                             Toast.makeText(getApplicationContext(), "Email ou Senha não encontrados.", Toast.LENGTH_LONG).show();
                         }

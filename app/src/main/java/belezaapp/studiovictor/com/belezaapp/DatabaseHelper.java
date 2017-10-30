@@ -57,4 +57,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.moveToFirst();
         return cursor;
     }
+
+    public Cursor pegarTodosUsuarios(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + NOME_TABELA, null);
+        cursor.moveToFirst();
+        return cursor;
+    }
 }
