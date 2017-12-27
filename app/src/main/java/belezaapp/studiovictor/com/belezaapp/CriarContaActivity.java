@@ -8,37 +8,44 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class CriarContaActivity extends AppCompatActivity {
 
-    DatabaseHelper meuDB;
-    private EditText nome;
-    private EditText cpf;
-    private EditText email;
-    private EditText senha;
-    private EditText confirmarSenha;
+    private EditText salaoNome, salaoCNPJ, salaoTelefone, salaoEnderecoBairro, salaoEnderecoRua, salaoEnderecoNumero;
+    private EditText nome, cpf, email, senha, confirmarSenha;
     private Button enviarDados;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference().child("Teste");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_criar_conta);
 
-        meuDB = new DatabaseHelper(this);
 
+        myRef.child("00").setValue("Hello, World!");
+
+
+        //region INFORMAÇÕES DO SALÃO
+        salaoNome = (EditText) findViewById(R.id.campoSalaoNome);
+        salaoCNPJ = (EditText) findViewById(R.id.campoSalaoCNPJ);
+        salaoTelefone = (EditText) findViewById(R.id.campoSalaoTelefone);
+        salaoEnderecoBairro = (EditText) findViewById(R.id.campoSalaoEnderecoBairro);
+        salaoEnderecoRua = (EditText) findViewById(R.id.campoSalaoEnderecoRua);
+        salaoEnderecoNumero = (EditText) findViewById(R.id.campoSalaoEnderecoRua);
+        //endregion
+
+        //region INFORMAÇÕES PESSOAIS
         nome = (EditText)findViewById(R.id.campoNome);
         cpf = (EditText)findViewById(R.id.campoCPF);
         email = (EditText)findViewById(R.id.campoEmail);
         senha = (EditText)findViewById(R.id.campoSenha);
         confirmarSenha = (EditText)findViewById(R.id.campoConfirmarSenha);
-        enviarDados = (Button)findViewById(R.id.botaoEnviarDados);
+        //endregion
 
-        /* Eu limpei a propriedade 'text' dos elementos do layout, não sendo mais necessário limpá-los via código.
-        // Limpando os campos antes do usuário digitar, deixando somente os hints
-        nome.setText("");
-        cpf.setText("");
-        email.setText("");
-        senha.setText("");
-        */
+        enviarDados = (Button)findViewById(R.id.botaoEnviarDados);
 
         adicionarDados();
     }
@@ -50,22 +57,25 @@ public class CriarContaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Cursor cursor = meuDB.pegarDados(email.getText().toString());
 
                     //'If' que verifica se já existe um cadastro com esse 'Email'.
-                    //Se cair no 'if' é porque a busca retornou um resultado, e o email já foi utilizado.
-                    if (cursor.getCount()>0) {
+                    //Se o email for encontrado no FireBase, o IF abaixo deve ser chamado.
+                    if () {
                         Toast.makeText(getApplicationContext(), "O Email não é válido ou já foi utilizado.", Toast.LENGTH_LONG).show();
-
                     } else {
                         //Se o 'Email' e a 'Senha' forem diferentes de uma string vazia a verificação segue adiante.
                         if (!email.getText().toString().isEmpty() && !senha.getText().toString().isEmpty()) {
                             //Se as duas senhas digitadas baterem, o App realiza o cadastro.
                             if (senha.getText().toString().equals(confirmarSenha.getText().toString())) {
 
-                                boolean dadosInseridos = meuDB.inserirDados(nome.getText().toString(),
-                                        cpf.getText().toString(), email.getText().toString(),
-                                        senha.getText().toString());
+
+//                                boolean dadosInseridos = meuDB.inserirDados(nome.getText().toString(),
+//                                        cpf.getText().toString(), email.getText().toString(),
+//                                        senha.getText().toString());
+
+
+                                //'dadosInseridos' serve como um boolean de checagem, que verifica se os dados foram inseridos com sucesso (True). Não sei como que vai ficar essa verificação
+                                //com o FireBase.
                                 if (dadosInseridos) {
                                     Toast.makeText(CriarContaActivity.this, "Conta criada com sucesso!", Toast.LENGTH_LONG).show();
                                     finish();
