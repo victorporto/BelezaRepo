@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "326260474328-83mi7sgapvn4dk9ap4ttssudl79rqodo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "belezaapp.studiovictor.com.belezaapp",
+            "certificate_hash": "8b5c584b2abf5fc1764c694877f7c5107ba0453a"
+          }
+        },
+        {
           "client_id": "326260474328-oreugjfv5bjn3qm9udh0j34bfm1vi0f9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
