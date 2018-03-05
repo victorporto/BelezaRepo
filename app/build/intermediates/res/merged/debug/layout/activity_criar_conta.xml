@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CriarContaActivity">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_background"
+        android:scrollIndicators="none"
+        android:scrollbars="none"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="81dp">
+
+
+        <TextView
+            android:id="@+id/tituloCadastro0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="32dp"
+            android:text="Informações da Empresa"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tituloCadastro1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="32dp"
+            android:text="Informações Pessoais"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/campoSalaoEnderecoRua" />
+
+        <EditText
+            android:id="@+id/campoNome"
+            android:layout_width="@dimen/width_fields"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="32dp"
+            android:background="#ffffff"
+            android:ems="10"
+            android:hint="Nome"
+            android:inputType="textPersonName"
+            android:padding="@dimen/padding_fields"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tituloCadastro1" />
+
+        <EditText
+            android:id="@+id/campoSalaoNome"
+            android:layout_width="@dimen/width_fields"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="32dp"
+            android:background="#ffffff"
+            android:ems="10"
+            android:hint="Nome do Salão"
+            android:inputType="textPersonName"
+            android:padding="@dimen/padding_fields"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tituloCadastro0" />
+
+        <EditText
+            android:id="@+id/campoSalaoEnderecoRua"
+            android:layout_width="@dimen/width_fields"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#ffffff"
+            android:ems="10"
+            android:hint="Rua"
+            android:inputType="textPersonName"
+            android:padding="@dimen/padding_fields"
+            app:layout_constraintEnd_toEndOf="@+id/campoSalaoEnderecoNumero"
+            app:layout_constraintStart_toStartOf="@+id/campoSalaoEnderecoBairro"
+            app:layout_constraintTop_toBottomOf="@+id/campoSalaoEnderecoBairro" />
+
+        <EditText
+            android:id="@+id/campoSalaoEnderecoBairro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="#ffffff"
+            android:ems="10"
+            android:hint="Bairro"
+            android:inputType="textPersonName"
+            android:padding="@dimen/padding_fields"
+            app:layout_constraintBaseline_toBaselineOf="@+id/campoSalaoEnderecoNumero"
+            app:layout_constraintEnd_toStartOf="@+id/campoSalaoEnderecoNumero"
+            app:layout_constraintStart_toStartOf="@+id/campoSalaoTelefone" />
+
+        <EditText
+            android:id="@+id/campoSalaoEnderecoNumero"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="#ffffff"
+            android:ems="10"
+            android:hint="Nº"
+            android:inputType="number"
+            android:padding="@dimen/padding_fields"
+            app:layout_constraintEnd_toEndOf="@+id/campoSalaoTelefone"
+            app:layout_constraintTop_toBottomOf="@+id/campoSalaoTelefone" />
+
+        <EditText
+            android:id="@+id/campoSalaoTelefone"
+            android:layout_width="@dimen/width_fields"
+            android:layout_height="38dp"
+            android:layout_marginTop="16dp"
+            android:background="#ffffff"
+            android:ems="10"
+            android:hint="Telefone"
+            android:inputType="phone"
+            android:padding="@dimen/padding_fields"
+            app:layout_constraintEnd_toEndOf="@+id/campoSalaoCNPJ"
+            app:layout_constraintStart_toStartOf="@+id/campoSalaoCNPJ"
+            app:layout_constraintTop_toBottomOf="@+id/campoSalaoCNPJ" />
+
+        <EditText
+            android:id="@+id/campoSalaoCNPJ"
+            android:layout_width="@dimen/width_fields"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#ffffff"
+            android:ems="10"
+            android:hint="CNPJ"
+            android:inputType="number"
+            android:padding="@dimen/padding_fields"
+            app:layout_constraintEnd_toEndOf="@+id/campoSalaoNome"
+            app:layout_constraintStart_toStartOf="@+id/campoSalaoNome"
+            app:layout_constraintTop_toBottomOf="@+id/campoSalaoNome" />
+
+        <EditText
+            android:id="@+id/campoCPF"
+            android:layout_width="@dimen/width_fields"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:background="#ffffff"
+            android:ems="10"
+            android:hint="CPF"
+            android:inputType="number"
+            android:padding="@dimen/padding_fields"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/campoNome" />
+
+        <EditText
+            android:id="@+id/campoEmail"
+            android:layout_width="@dimen/width_fields"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:background="#ffffff"
+            android:ems="10"
+            android:hint="E-mail*"
+            android:inputType="textPersonName"
+            android:padding="@dimen/padding_fields"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/campoCPF" />
+
+        <EditText
+            android:id="@+id/campoSenha"
+            android:layout_width="@dimen/width_fields"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:background="#ffffff"
+            android:ems="10"
+            android:hint="Senha*"
+            android:inputType="textPassword"
+            android:padding="@dimen/padding_fields"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/campoEmail" />
+
+        <Button
+            android:id="@+id/botaoEnviarDados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Enviar Dados"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.887"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/campoConfirmarSenha"
+            app:layout_constraintVertical_bias="0.424" />
+
+        <EditText
+            android:id="@+id/campoConfirmarSenha"
+            android:layout_width="@dimen/width_fields"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="#ffffff"
+            android:ems="10"
+            android:hint="Confirmar senha*"
+            android:inputType="textPassword"
+            android:padding="@dimen/padding_fields"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/campoSenha" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
