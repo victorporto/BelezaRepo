@@ -18,7 +18,9 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".CriarContaActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".UsuarioInfoActivity"></activity>
+        <activity android:name=".SalaoServicosActivity" />
+        <activity android:name=".SalaoFuncionariosActivity" />
+        <activity android:name=".CriarServicoActivity"></activity>
     </application>
 
 </manifest>

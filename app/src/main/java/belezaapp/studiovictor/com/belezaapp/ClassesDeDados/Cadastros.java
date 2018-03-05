@@ -1,5 +1,7 @@
 package belezaapp.studiovictor.com.belezaapp.ClassesDeDados;
 
+import java.util.ArrayList;
+
 /**
  * Created by Victor on 27/12/2017.
  */
@@ -8,34 +10,40 @@ public class Cadastros {
 
     //region Salão
     private String salaoNome;
-    private int salaoCNPJ;
-    private int salaoTelefone;
+    private long salaoCNPJ;
+    private long salaoTelefone;
     private String salaoEnderecoBairro;
     private String salaoEnderecoRua;
     private int salaoEnderecoNumero;
+    private ArrayList<Servicos> salaoServicos;
+    private ArrayList<Funcionarios> salaoFuncionarios;
     //endregion
     //region Pessoais
     private String nome;
     private long CPF;
     private String email;
-    private String senha;
+    //endregion
+    //region Utils
+    private int statusCadastro;
     //endregion
 
-    public Cadastros(String salaoNome, int salaoCNPJ, int salaoTelefone, String salaoEnderecoBairro, String salaoEnderecoRua, int salaoEnderecoNumero, String nome, long CPF, String email, String senha) {
+    public Cadastros() {
+
+    }
+
+    public Cadastros(String salaoNome, long salaoCNPJ, long salaoTelefone, String salaoEnderecoBairro, String salaoEnderecoRua, int salaoEnderecoNumero, String nome, long CPF, String email) {
         this.salaoNome = salaoNome;
         this.salaoCNPJ = salaoCNPJ;
         this.salaoTelefone = salaoTelefone;
         this.salaoEnderecoBairro = salaoEnderecoBairro;
         this.salaoEnderecoRua = salaoEnderecoRua;
         this.salaoEnderecoNumero = salaoEnderecoNumero;
+
         this.nome = nome;
         this.CPF = CPF;
         this.email = email;
-        this.senha = senha;
-    }
 
-    public Cadastros() {
-
+        this.statusCadastro = 0;
     }
 
     public String getSalaoNome() {
@@ -46,19 +54,19 @@ public class Cadastros {
         this.salaoNome = salaoNome;
     }
 
-    public int getSalaoCNPJ() {
+    public long getSalaoCNPJ() {
         return salaoCNPJ;
     }
 
-    public void setSalaoCNPJ(int salaoCNPJ) {
+    public void setSalaoCNPJ(long salaoCNPJ) {
         this.salaoCNPJ = salaoCNPJ;
     }
 
-    public int getSalaoTelefone() {
+    public long getSalaoTelefone() {
         return salaoTelefone;
     }
 
-    public void setSalaoTelefone(int salaoTelefone) {
+    public void setSalaoTelefone(long salaoTelefone) {
         this.salaoTelefone = salaoTelefone;
     }
 
@@ -86,6 +94,30 @@ public class Cadastros {
         this.salaoEnderecoNumero = salaoEnderecoNumero;
     }
 
+    public ArrayList<Servicos> getSalaoServicos() {
+        return salaoServicos;
+    }
+
+    public void setSalaoServicos(ArrayList<Servicos> salaoServicos) {
+        this.salaoServicos = salaoServicos;
+    }
+
+    public ArrayList<Funcionarios> getSalaoFuncionarios() {
+        return salaoFuncionarios;
+    }
+
+    public void setSalaoFuncionarios(ArrayList<Funcionarios> salaoFuncionarios) {
+        this.salaoFuncionarios = salaoFuncionarios;
+    }
+
+    public int getStatusCadastro() {
+        return statusCadastro;
+    }
+
+    public void setStatusCadastro(int statusCadastro) {
+        this.statusCadastro = statusCadastro;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -106,16 +138,9 @@ public class Cadastros {
         return email;
     }
 
+
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 
 }

@@ -14,7 +14,6 @@
         android:background="@color/color_background"
         android:scrollIndicators="none"
         android:scrollbars="none"
-        tools:context=".CriarContaActivity"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="81dp">
 
@@ -158,7 +157,7 @@
             android:background="#ffffff"
             android:ems="10"
             android:hint="CPF"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:padding="@dimen/padding_fields"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintLeft_toLeftOf="parent"

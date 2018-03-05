@@ -1,8 +1,9 @@
 package belezaapp.studiovictor.com.belezaapp;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,86 +11,76 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+import belezaapp.studiovictor.com.belezaapp.Config.ConfigFirebase;
+
 public class LoginActivity extends AppCompatActivity {
 
-    private Button botaoCriarConta, botaoEntrar;
+    private Button botaoCriarConta, botaoLogin;
     private EditText campoEmail, campoSenha;
-    DatabaseHelper meuDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        //Esconde a 'ActionBar' da 'SplashScreenActivity'
+        //Esconde a 'ActionBar'
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+
         //Elementos da tela
         botaoCriarConta = (Button) findViewById(R.id.id_botaoCriarConta);
-        botaoEntrar = (Button) findViewById(R.id.id_botaoEntrar);
+        botaoLogin = (Button) findViewById(R.id.id_botaoEntrar);
         campoEmail = (EditText) findViewById(R.id.id_campoEmail);
         campoSenha = (EditText) findViewById(R.id.id_campoSenha);
-        meuDB = new DatabaseHelper(this);
+
 
         //'SetOnClickListeners'
-        botaoEntrar.setOnClickListener(new View.OnClickListener() {
+        botaoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 String email = campoEmail.getText().toString(),
-                       senha = campoSenha.getText().toString();
-
-                try {
-//                    //Abrindo/Criando Banco de Dados da aplicação.
-//                    SQLiteDatabase bancoDeDados = openOrCreateDatabase("BancoDeDadosTest0", MODE_PRIVATE, null);
-//
-//                    //Executando SQLs que cria as tabelas 'Tabela_Usuarios' e 'Tabela_SaloesDeBeleza', se não tiverem sido criadas ainda.
-//                    bancoDeDados.execSQL("CREATE TABLE IF NOT EXISTS Tabela_Usuarios (usuario_nome VARCHAR, usuario_cpf BIGINT, usuario_email VARCHAR, usuario_senha VARCHAR)");
-//                    bancoDeDados.execSQL("CREATE TABLE IF NOT EXISTS Tabela_SaloesDeBeleza (salao_nome VARCHAR, salao_qntFuncionarios INT, salao_endereco VARCHAR, salao_telefone INT)");
-//
-                    //Executando SQL de busca no Banco de Dados e movendo o 'cursor' pra posição inicial dos dados recuperados.
-                    // **********************************//*//**************************************
-                    // Eu queria simplesmente fazer o cursor com o rawQuery aqui mas meu Android Studio não consegue resolver o método.
-                    // Tentei um modo diferente de usar o rawQuery abaixo
-//                    Cursor cursor = meuDB.rawQuery("SELECT * FROM Tabela_Usuarios WHERE usuario_email = '" + email + "'", null);
-//                    cursor.moveToFirst();
-
-                    // Essa foi a única maneira que consegui fazer o rawQuery funcionar, não testei ainda
-                    // TODO criar método para buscar todos os dados no DB
-                    Cursor cursor = meuDB.pegarDados(email);
-
-                    if (cursor != null && cursor.getCount()>0) {
-                        //Guardando os indices das colunas do 'cursor' dentro de variáveis mais legíveis .
-                        int indiceColunaEmail = cursor.getColumnIndex("usuario_email");
-                        int indiceColunaSenha = cursor.getColumnIndex("usuario_senha");
-
-                        if (email.equals(cursor.getString(indiceColunaEmail))
-                         && senha.equals(cursor.getString(indiceColunaSenha))) {
-                            Toast.makeText(getApplicationContext(), "Login realizado com sucesso!", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Email ou Senha não encontrados.", Toast.LENGTH_LONG).show();
-                        }
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Email ou Senha não encontrados.", Toast.LENGTH_LONG).show();
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                        senha = campoSenha.getText().toString();
+                logarUsuario(email, senha);
             }
         });
 
         botaoCriarConta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, CriarContaActivity.class));
+                Intent intent = new Intent(getApplicationContext(), CriarContaActivity.class);
+                startActivity(intent);
             }
         });
     }
-}
 
-//TEST
-//bancoDeDados.execSQL("INSERT INTO Tabela_Usuarios (usuario_nome, usuario_cpf, usuario_email, usuario_senha) VALUES ('TEST', 01234567890, 'homero@gmail.com', '123')");
-//bancoDeDados.execSQL("INSERT INTO Tabela_Usuarios (usuario_nome, usuario_cpf, usuario_email, usuario_senha) VALUES ('TEST2', 01234567890, 'moises@gmail.com', '123456')");
+    private void logarUsuario(String _email, String _senha) {
+        try {
+            ConfigFirebase.getAuthFirebase().signInWithEmailAndPassword(_email, _senha).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        telaPrincipal();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Email ou senha estão errados.", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    private void telaPrincipal() {
+        Intent intentMainActivity = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intentMainActivity);
+        finish();
+    }
+
+}
