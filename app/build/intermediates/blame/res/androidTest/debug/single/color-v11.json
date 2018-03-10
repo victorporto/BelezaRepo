@@ -14,5 +14,13 @@
     {
         "merged": "C:\\Users\\mathe\\AndroidStudioProjects\\BelezaApp1\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
         "source": "C:\\Users\\mathe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\e9296ae36417c22ec5e7f2dc4fb80c51\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\BelezaApp1\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "C:\\Users\\Moisés\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\7a90be5cfba103b9cf1d724bf1afc9ba\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\BelezaApp1\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "C:\\Users\\Moisés\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\7a90be5cfba103b9cf1d724bf1afc9ba\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     }
 ]

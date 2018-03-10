@@ -4,6 +4,10 @@
         "source": "C:\\Users\\mathe\\AndroidStudioProjects\\BelezaApp1\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\AndroidProjects\\BelezaApp1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
+        "source": "D:\\AndroidProjects\\BelezaApp1\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
         "merged": "C:\\Users\\Victor\\AndroidStudioProjects\\BelezaApp1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
         "source": "C:\\Users\\Victor\\AndroidStudioProjects\\BelezaApp1\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     }

@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    tools:context=".CriarFuncionarioActivity">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_background"
+        android:scrollIndicators="none"
+        android:scrollbars="none"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="81dp">
+
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="29dp"
+            android:text="Nome do Funcionário:"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/id_edtFuncionarioNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/background_light"
+            android:ems="10"
+            android:hint="Nome"
+            android:inputType="textPersonName"
+            android:padding="@dimen/padding_fields"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:text="Dias de Trabalho"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_edtFuncionarioNome" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Dom    Seg    Ter    Qua    Qui    Sex    Sáb"
+            android:textColor="@android:color/white"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <CheckBox
+            android:id="@+id/id_domCriarFuncCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            app:layout_constraintStart_toStartOf="@+id/textView10"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            tools:clickable="true" />
+
+        <CheckBox
+            android:id="@+id/id_segCriarFuncCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            app:layout_constraintStart_toEndOf="@+id/id_domCriarFuncCheckBox"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            tools:clickable="true" />
+
+        <CheckBox
+            android:id="@+id/id_terCriarFuncCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            app:layout_constraintStart_toEndOf="@+id/id_segCriarFuncCheckBox"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            tools:clickable="true" />
+
+        <CheckBox
+            android:id="@+id/id_quaCriarFuncCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@+id/id_terCriarFuncCheckBox"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            tools:clickable="true" />
+
+        <CheckBox
+            android:id="@+id/id_quiCriarFuncCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            app:layout_constraintStart_toEndOf="@+id/id_quaCriarFuncCheckBox"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            tools:clickable="true" />
+
+        <CheckBox
+            android:id="@+id/id_sexCriarFuncCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            app:layout_constraintStart_toEndOf="@+id/id_quiCriarFuncCheckBox"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            tools:clickable="true" />
+
+        <CheckBox
+            android:id="@+id/id_sabCriarFuncCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            app:layout_constraintStart_toEndOf="@+id/id_sexCriarFuncCheckBox"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            tools:clickable="true" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:text="Horário de Trabalho"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_domCriarFuncCheckBox" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="Início:"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="Término:"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_txtTrabalhoInicio" />
+
+        <TextView
+            android:id="@+id/id_txtTrabalhoInicio"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="9dp"
+            android:background="#FFD1D1D1"
+            android:hint="Clique e selecione um horário"
+            android:padding="3dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/id_txtTrabalhoFim"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:background="#FFD1D1D1"
+            android:hint="Clique e selecione um horário"
+            android:padding="3dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/id_txtTrabalhoInicio"
+            app:layout_constraintStart_toStartOf="@+id/id_txtTrabalhoInicio"
+            app:layout_constraintTop_toBottomOf="@+id/id_txtTrabalhoInicio" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:text="Horário de Intervalo"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="Início:"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="Término:"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+        <TextView
+            android:id="@+id/id_txtIntervaloInicio"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="9dp"
+            android:background="#FFD1D1D1"
+            android:hint="Clique e selecione um horário"
+            android:padding="3dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView17"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <TextView
+            android:id="@+id/id_txtIntervaloFim"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="#FFD1D1D1"
+            android:hint="Clique e selecione um horário"
+            android:padding="3dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/id_txtIntervaloInicio"
+            app:layout_constraintStart_toStartOf="@+id/id_txtIntervaloInicio"
+            app:layout_constraintTop_toBottomOf="@+id/id_txtIntervaloInicio" />
+
+        <Button
+            android:id="@+id/id_btnCancelarFunc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="20dp"
+            android:text="Cancelar"
+            app:layout_constraintEnd_toStartOf="@+id/id_btnCriarFunc"
+            app:layout_constraintTop_toBottomOf="@+id/id_txtIntervaloFim" />
+
+        <Button
+            android:id="@+id/id_btnCriarFunc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="20dp"
+            android:text="Salvar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_txtIntervaloFim" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
+
+<!--
+<CheckBox
+        android:id="id_domCriarFuncCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:clickable="false" />
+
+    <CheckBox
+        android:id="id_segCriarFuncCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        app:layout_constraintStart_toEndOf="@+id/id_domCriarFuncCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:clickable="false" />
+
+    <CheckBox
+        android:id="id_terCriarFuncCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        app:layout_constraintStart_toEndOf="@+id/id_segCriarFuncCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:clickable="false" />
+
+    <CheckBox
+        android:id="id_quaCriarFuncCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@+id/id_terCriarFuncCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:clickable="false" />
+
+    <CheckBox
+        android:id="id_quiCriarFuncCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toEndOf="@+id/id_quaCriarFuncCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:clickable="false" />
+
+    <CheckBox
+        android:id="id_sexCriarFuncCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        app:layout_constraintStart_toEndOf="@+id/id_quiCriarFuncCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:clickable="false" />
+
+    <CheckBox
+        android:id="id_sabCriarFuncCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        app:layout_constraintStart_toEndOf="@+id/id_sexCriarFuncCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:clickable="false" />
+
+
+
+
+
+
+
+<Button
+            android:id="@+id/id_btnCriarServico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="20dp"
+            android:text="Salvar"
+            app:layout_constraintEnd_toEndOf="@+id/id_servicoTempo"
+            app:layout_constraintTop_toBottomOf="@+id/id_servicoTempo" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="26dp"
+            android:text="Preço do Serviço:"
+            android:textColor="@android:color/background_light"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="49dp"
+            android:text="Nome do Serviço:"
+            android:textColor="@android:color/background_light"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="27dp"
+            android:text="Tempo (min):"
+            android:textColor="@android:color/background_light"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <EditText
+            android:id="@+id/id_servicoNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="40dp"
+            android:background="@android:color/white"
+            android:ems="10"
+            android:hint="Nome"
+            android:inputType="textPersonName"
+            android:padding="@dimen/padding_fields"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/id_servicoPreco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:ems="10"
+            android:hint="Preço"
+            android:inputType="number"
+            android:padding="@dimen/padding_fields"
+            app:layout_constraintEnd_toEndOf="@+id/id_servicoNome"
+            app:layout_constraintStart_toStartOf="@+id/id_servicoNome"
+            app:layout_constraintTop_toBottomOf="@+id/id_servicoNome" />
+
+        <EditText
+            android:id="@+id/id_servicoTempo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:ems="10"
+            android:hint="Tempo necessário"
+            android:inputType="number"
+            android:padding="@dimen/padding_fields"
+            app:layout_constraintEnd_toEndOf="@+id/id_servicoPreco"
+            app:layout_constraintStart_toStartOf="@+id/id_servicoPreco"
+            app:layout_constraintTop_toBottomOf="@+id/id_servicoPreco" />
+
+        <Button
+            android:id="@+id/id_btnVoltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="20dp"
+            android:text="Cancelar"
+            app:layout_constraintEnd_toStartOf="@+id/id_btnCriarServico"
+            app:layout_constraintTop_toBottomOf="@+id/id_servicoTempo" />
+
+
+-->

@@ -22,12 +22,10 @@ import belezaapp.studiovictor.com.belezaapp.R;
 public class LstServicoAdapter extends BaseAdapter implements ListAdapter{
 
     private ArrayList<Servicos> listaServicos = new ArrayList<Servicos>();
-    private String nomeSalao;
     private Context context;
 
-    public LstServicoAdapter(ArrayList<Servicos> _listaServicos, String _nomeSalao, Context context) {
+    public LstServicoAdapter(ArrayList<Servicos> _listaServicos, Context context) {
         this.listaServicos = _listaServicos;
-        this.nomeSalao = _nomeSalao;
         this.context = context;
     }
 

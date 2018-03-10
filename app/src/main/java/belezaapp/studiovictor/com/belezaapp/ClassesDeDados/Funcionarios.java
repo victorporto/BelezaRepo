@@ -12,37 +12,45 @@ public class Funcionarios {
     private ArrayList<String> servicosFuncionario;
 
     //Alterar os atributos a seguir, substituindo por variáveis apropriadas para DATAS e HORAS.
-    private ArrayList<String> diasDeTrabalhoSemanal;
-    private int horarioDeTrabalhoInicio;
-    private int horarioDeTrabalhoFim;
-    private int horarioDeIntervaloInicio;
-    private int horarioDeIntervaloFim;
+    private boolean domingo;
+    private boolean segunda;
+    private boolean terca;
+    private boolean quarta;
+    private boolean quinta;
+    private boolean sexta;
+    private boolean sabado;
+    private String horarioDeTrabalhoInicio;
+    private String horarioDeTrabalhoFim;
+    private String horarioDeIntervaloInicio;
+    private String horarioDeIntervaloFim;
     //Alterar os atributos a seguir, substituindo por variáveis apropriadas para DATAS e HORAS.
 
     public Funcionarios() {
 
     }
 
-    public Funcionarios(String nomeFuncionario) {
-        this.nomeFuncionario = nomeFuncionario;
-        this.servicosFuncionario = new ArrayList<String>();
-        this.servicosFuncionario.add("0");
-        this.diasDeTrabalhoSemanal = new ArrayList<String>();
-        this.diasDeTrabalhoSemanal.add("Segunda");
-        this.diasDeTrabalhoSemanal.add("Terça");
-        this.diasDeTrabalhoSemanal.add("Quarta");
-        this.diasDeTrabalhoSemanal.add("Quinta");
-        this.diasDeTrabalhoSemanal.add("Sexta");
-        this.horarioDeTrabalhoInicio = 0;
-        this.horarioDeTrabalhoFim = 0;
-        this.horarioDeIntervaloInicio = 0;
-        this.horarioDeIntervaloFim = 0;
-    }
-
-    public Funcionarios(String nomeFuncionario, ArrayList<String> servicosFuncionario, ArrayList<String> diasDeTrabalhoSemanal, int horarioDeTrabalhoInicio, int horarioDeTrabalhoFim, int horarioDeIntervaloInicio, int horarioDeIntervaloFim) {
+    public Funcionarios(String nomeFuncionario,
+                        ArrayList<String> servicosFuncionario,
+                        boolean domingo,
+                        boolean segunda,
+                        boolean terca,
+                        boolean quarta,
+                        boolean quinta,
+                        boolean sexta,
+                        boolean sabado,
+                        String horarioDeTrabalhoInicio,
+                        String horarioDeTrabalhoFim,
+                        String horarioDeIntervaloInicio,
+                        String horarioDeIntervaloFim) {
         this.nomeFuncionario = nomeFuncionario;
         this.servicosFuncionario = servicosFuncionario;
-        this.diasDeTrabalhoSemanal = diasDeTrabalhoSemanal;
+        this.domingo = domingo;
+        this.segunda = segunda;
+        this.terca = terca;
+        this.quarta = quarta;
+        this.quinta = quinta;
+        this.sexta = sexta;
+        this.sabado = sabado;
         this.horarioDeTrabalhoInicio = horarioDeTrabalhoInicio;
         this.horarioDeTrabalhoFim = horarioDeTrabalhoFim;
         this.horarioDeIntervaloInicio = horarioDeIntervaloInicio;
@@ -65,43 +73,91 @@ public class Funcionarios {
         this.servicosFuncionario = servicosFuncionario;
     }
 
-    public ArrayList<String> getDiasDeTrabalhoSemanal() {
-        return diasDeTrabalhoSemanal;
+    public boolean isDomingo() {
+        return domingo;
     }
 
-    public void setDiasDeTrabalhoSemanal(ArrayList<String> diasDeTrabalhoSemanal) {
-        this.diasDeTrabalhoSemanal = diasDeTrabalhoSemanal;
+    public void setDomingo(boolean domingo) {
+        this.domingo = domingo;
     }
 
-    public int getHorarioDeTrabalhoInicio() {
+    public boolean isSegunda() {
+        return segunda;
+    }
+
+    public void setSegunda(boolean segunda) {
+        this.segunda = segunda;
+    }
+
+    public boolean isTerca() {
+        return terca;
+    }
+
+    public void setTerca(boolean terca) {
+        this.terca = terca;
+    }
+
+    public boolean isQuarta() {
+        return quarta;
+    }
+
+    public void setQuarta(boolean quarta) {
+        this.quarta = quarta;
+    }
+
+    public boolean isQuinta() {
+        return quinta;
+    }
+
+    public void setQuinta(boolean quinta) {
+        this.quinta = quinta;
+    }
+
+    public boolean isSexta() {
+        return sexta;
+    }
+
+    public void setSexta(boolean sexta) {
+        this.sexta = sexta;
+    }
+
+    public boolean isSabado() {
+        return sabado;
+    }
+
+    public void setSabado(boolean sabado) {
+        this.sabado = sabado;
+    }
+
+    public String getHorarioDeTrabalhoInicio() {
         return horarioDeTrabalhoInicio;
     }
 
-    public void setHorarioDeTrabalhoInicio(int horarioDeTrabalhoInicio) {
+    public void setHorarioDeTrabalhoInicio(String horarioDeTrabalhoInicio) {
         this.horarioDeTrabalhoInicio = horarioDeTrabalhoInicio;
     }
 
-    public int getHorarioDeTrabalhoFim() {
+    public String getHorarioDeTrabalhoFim() {
         return horarioDeTrabalhoFim;
     }
 
-    public void setHorarioDeTrabalhoFim(int horarioDeTrabalhoFim) {
+    public void setHorarioDeTrabalhoFim(String horarioDeTrabalhoFim) {
         this.horarioDeTrabalhoFim = horarioDeTrabalhoFim;
     }
 
-    public int getHorarioDeIntervaloInicio() {
+    public String getHorarioDeIntervaloInicio() {
         return horarioDeIntervaloInicio;
     }
 
-    public void setHorarioDeIntervaloInicio(int horarioDeIntervaloInicio) {
+    public void setHorarioDeIntervaloInicio(String horarioDeIntervaloInicio) {
         this.horarioDeIntervaloInicio = horarioDeIntervaloInicio;
     }
 
-    public int getHorarioDeIntervaloFim() {
+    public String getHorarioDeIntervaloFim() {
         return horarioDeIntervaloFim;
     }
 
-    public void setHorarioDeIntervaloFim(int horarioDeIntervaloFim) {
+    public void setHorarioDeIntervaloFim(String horarioDeIntervaloFim) {
         this.horarioDeIntervaloFim = horarioDeIntervaloFim;
     }
 }

@@ -1,16 +1,14 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-26:12
-MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\7ae63436045a5b693e067431427ff98d\AndroidManifest.xml:17:1-31:12
+ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-27:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ef53e75c6d812d048449bb24a86a8631\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-core:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-core-11.0.4.aar\bca2562b8e425f293915663dbbc33853\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-database:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-database-11.0.4.aar\62310299165ab2687c925c1769d52068\AndroidManifest.xml:2:1-4:12
 MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\26b31a5db8bc5975ecd2fa504098fdab\AndroidManifest.xml:16:1-21:12
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\0bafa073bb80e5751a07134476c5f354\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\5d658176160c7941c42b79879d84bad1\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\7ae63436045a5b693e067431427ff98d\AndroidManifest.xml:17:1-31:12
 MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\3c21b1eb8826c2ec6b211fddb5224592\AndroidManifest.xml:16:1-35:12
 MERGED from [com.google.firebase:firebase-database-connection:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-11.0.4.aar\8f65ffb7275db231120ca1b69987b198\AndroidManifest.xml:2:1-4:12
 MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\233f1dbb2a834e6031aa3df5f26760e6\AndroidManifest.xml:16:1-29:12
@@ -19,43 +17,41 @@ MERGED from [com.google.firebase:firebase-common:11.0.4] C:\Users\Victor\.gradle
 MERGED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\7b1cac0f1553c01655f2a1ad3864317e\AndroidManifest.xml:16:1-21:12
 MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\2c56615d39f185f4d5911550ca09ce03\AndroidManifest.xml:2:1-5:12
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\c0417c2861a57ed8989b9621cbbba37e\AndroidManifest.xml:16:1-23:12
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\0bafa073bb80e5751a07134476c5f354\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\5d658176160c7941c42b79879d84bad1\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\56dec59650dff52237c355f815491ce2\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-fragment-25.3.1.aar\c779a714b339bc6e38676cc2b7cf54a5\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.3.1.aar\5e7c9dcfce30ab5684ef20a25d0cd79b\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.3.1.aar\e5bb74669df68f5dfe8357ccdd829132\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.3.1.aar\ec01add0f269920e3b3f6a0bfc6853f3\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-compat-25.3.1.aar\db86a33874a8c542c4d688810995a138\AndroidManifest.xml:17:1-31:12
-INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-27:12
 	package
 		ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:3:5-51
 		INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-26:12
+		ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-27:12
 		INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-26:12
+		ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:1-27:12
 		INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:5:5-24:19
-MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\7ae63436045a5b693e067431427ff98d\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\7ae63436045a5b693e067431427ff98d\AndroidManifest.xml:29:5-20
+ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:5:5-25:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ef53e75c6d812d048449bb24a86a8631\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ef53e75c6d812d048449bb24a86a8631\AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-core:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-core-11.0.4.aar\bca2562b8e425f293915663dbbc33853\AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-core:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-core-11.0.4.aar\bca2562b8e425f293915663dbbc33853\AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\26b31a5db8bc5975ecd2fa504098fdab\AndroidManifest.xml:19:5-20:19
 MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\26b31a5db8bc5975ecd2fa504098fdab\AndroidManifest.xml:19:5-20:19
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\0bafa073bb80e5751a07134476c5f354\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\0bafa073bb80e5751a07134476c5f354\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\5d658176160c7941c42b79879d84bad1\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\5d658176160c7941c42b79879d84bad1\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\7ae63436045a5b693e067431427ff98d\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\7ae63436045a5b693e067431427ff98d\AndroidManifest.xml:29:5-20
 MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\3c21b1eb8826c2ec6b211fddb5224592\AndroidManifest.xml:24:5-34:19
 MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\3c21b1eb8826c2ec6b211fddb5224592\AndroidManifest.xml:24:5-34:19
 MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\233f1dbb2a834e6031aa3df5f26760e6\AndroidManifest.xml:24:5-28:19
@@ -70,6 +66,10 @@ MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Victor\
 MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\2c56615d39f185f4d5911550ca09ce03\AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\c0417c2861a57ed8989b9621cbbba37e\AndroidManifest.xml:19:5-21:19
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\c0417c2861a57ed8989b9621cbbba37e\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\0bafa073bb80e5751a07134476c5f354\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\0bafa073bb80e5751a07134476c5f354\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\5d658176160c7941c42b79879d84bad1\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\5d658176160c7941c42b79879d84bad1\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\56dec59650dff52237c355f815491ce2\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\56dec59650dff52237c355f815491ce2\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-fragment-25.3.1.aar\c779a714b339bc6e38676cc2b7cf54a5\AndroidManifest.xml:29:5-20
@@ -127,15 +127,17 @@ ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\Android
 	android:name
 		ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:22:19-60
 activity#belezaapp.studiovictor.com.belezaapp.CriarServicoActivity
-ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:23:9-67
+ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:23:9-58
 	android:name
 		ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:23:19-55
+activity#belezaapp.studiovictor.com.belezaapp.CriarFuncionarioActivity
+ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:24:9-71
+	android:name
+		ADDED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml:24:19-59
 uses-sdk
 INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Victor\AndroidStudioProjects\BelezaApp1\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\7ae63436045a5b693e067431427ff98d\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\7ae63436045a5b693e067431427ff98d\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ef53e75c6d812d048449bb24a86a8631\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ef53e75c6d812d048449bb24a86a8631\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-core:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-core-11.0.4.aar\bca2562b8e425f293915663dbbc33853\AndroidManifest.xml:4:5-43
@@ -144,10 +146,8 @@ MERGED from [com.google.firebase:firebase-database:11.0.4] C:\Users\Victor\.grad
 MERGED from [com.google.firebase:firebase-database:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-database-11.0.4.aar\62310299165ab2687c925c1769d52068\AndroidManifest.xml:3:5-43
 MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\26b31a5db8bc5975ecd2fa504098fdab\AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\26b31a5db8bc5975ecd2fa504098fdab\AndroidManifest.xml:17:5-43
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\0bafa073bb80e5751a07134476c5f354\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\0bafa073bb80e5751a07134476c5f354\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\5d658176160c7941c42b79879d84bad1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\5d658176160c7941c42b79879d84bad1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\7ae63436045a5b693e067431427ff98d\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\7ae63436045a5b693e067431427ff98d\AndroidManifest.xml:21:5-23:78
 MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\3c21b1eb8826c2ec6b211fddb5224592\AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\3c21b1eb8826c2ec6b211fddb5224592\AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-database-connection:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-11.0.4.aar\8f65ffb7275db231120ca1b69987b198\AndroidManifest.xml:3:5-43
@@ -164,6 +164,10 @@ MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Victor\
 MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\2c56615d39f185f4d5911550ca09ce03\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\c0417c2861a57ed8989b9621cbbba37e\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\c0417c2861a57ed8989b9621cbbba37e\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\0bafa073bb80e5751a07134476c5f354\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\0bafa073bb80e5751a07134476c5f354\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\5d658176160c7941c42b79879d84bad1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\5d658176160c7941c42b79879d84bad1\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\56dec59650dff52237c355f815491ce2\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\56dec59650dff52237c355f815491ce2\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Victor\.gradle\caches\transforms-1\files-1.1\support-fragment-25.3.1.aar\c779a714b339bc6e38676cc2b7cf54a5\AndroidManifest.xml:21:5-23:60

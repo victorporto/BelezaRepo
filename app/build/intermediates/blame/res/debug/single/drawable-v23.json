@@ -6,5 +6,9 @@
     {
         "merged": "C:\\Users\\Victor\\AndroidStudioProjects\\BelezaApp1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\7ae63436045a5b693e067431427ff98d\\res\\drawable-v23\\abc_control_background_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\BelezaApp1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "C:\\Users\\Moisés\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\7a90be5cfba103b9cf1d724bf1afc9ba\\res\\drawable-v23\\abc_control_background_material.xml"
     }
 ]

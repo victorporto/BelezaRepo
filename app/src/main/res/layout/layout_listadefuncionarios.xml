@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/id_funcionarioNome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Nome Funcionário"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/id_funcionarioBtnEditar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
+        android:text="Intervalo"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/id_funcionarioNome" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Trabalha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_funcionarioNome" />
+
+    <TextView
+        android:id="@+id/id_horarioTrabalho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="8:00 - 17:00"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/id_horarioIntervalo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="12:00 - 13:00"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <ImageButton
+        android:id="@+id/id_funcionarioBtnEditar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/ic_menu_edit"
+        app:layout_constraintEnd_toStartOf="@+id/id_funcionarioBtnDeletar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/id_funcionarioBtnDeletar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/ic_menu_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/id_LstFuncionariosDias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Dom    Seg    Ter    Qua    Qui    Sex    Sáb"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_horarioTrabalho" />
+
+    <CheckBox
+        android:id="@+id/id_domCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        app:layout_constraintStart_toStartOf="@+id/id_LstFuncionariosDias"
+        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias"
+        tools:clickable="false" />
+
+    <CheckBox
+        android:id="@+id/id_segCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        app:layout_constraintStart_toEndOf="@+id/id_domCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias"
+        tools:clickable="false" />
+
+    <CheckBox
+        android:id="@+id/id_terCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        app:layout_constraintStart_toEndOf="@+id/id_segCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias"
+        tools:clickable="false" />
+
+    <CheckBox
+        android:id="@+id/id_quaCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@+id/id_terCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias"
+        tools:clickable="false" />
+
+    <CheckBox
+        android:id="@+id/id_quiCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toEndOf="@+id/id_quaCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias"
+        tools:clickable="false" />
+
+    <CheckBox
+        android:id="@+id/id_sexCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        app:layout_constraintStart_toEndOf="@+id/id_quiCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias"
+        tools:clickable="false" />
+
+    <CheckBox
+        android:id="@+id/id_sabCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        app:layout_constraintStart_toEndOf="@+id/id_sexCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias"
+        tools:clickable="false" />
+
+</android.support.constraint.ConstraintLayout>

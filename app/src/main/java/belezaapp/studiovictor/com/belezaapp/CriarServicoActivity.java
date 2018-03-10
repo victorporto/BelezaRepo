@@ -1,26 +1,17 @@
 package belezaapp.studiovictor.com.belezaapp;
 
-import android.support.annotation.NonNull;
+import android.os.Debug;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 
-import belezaapp.studiovictor.com.belezaapp.ClassesDeDados.Cadastros;
 import belezaapp.studiovictor.com.belezaapp.ClassesDeDados.Servicos;
 import belezaapp.studiovictor.com.belezaapp.Config.ConfigFirebase;
 import belezaapp.studiovictor.com.belezaapp.Config.Dados;
@@ -30,7 +21,7 @@ public class CriarServicoActivity extends AppCompatActivity {
     //private Cadastros cadastro;
     private Button btnCancelar, btnCriarServico;
     private EditText servicoNome, servicoPreco, servicoTempo;
-    private boolean resultadoValidarCampos = false;
+    private boolean isCamposValidados = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,26 +51,34 @@ public class CriarServicoActivity extends AppCompatActivity {
         btnCriarServico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(extras != null && !extras.getBoolean("editar")) {
-                    try {
-                        if (validarCampos()) {
-                            criarServico(servicoNome.getText().toString(), Float.parseFloat(servicoPreco.getText().toString()), Integer.parseInt(servicoTempo.getText().toString()));
-                            finish();
+                if(!servicoComMesmoNome(servicoNome.getText().toString())) {
+                    if (extras != null && !extras.getBoolean("editar")) {
+                        //region criarServico
+                        try {
+                            if (validarCampos()) {
+                                criarServico(servicoNome.getText().toString(), Float.parseFloat(servicoPreco.getText().toString()), Integer.parseInt(servicoTempo.getText().toString()));
+                                finish();
+                            }
+                        } catch (Exception e) {
+                            // TODO exception code
                         }
-                    } catch (Exception e) {
-                        // TODO exception code
-                    }
-                } else if (extras != null && extras.getBoolean("editar")) {
-                    try {
-                        if (validarCampos()) {
-                            editarServico(extras.getInt("position"), servicoNome.getText().toString(), Float.parseFloat(servicoPreco.getText().toString()), Integer.parseInt(servicoTempo.getText().toString()));
-                            finish();
+                        //endregion
+                    } else if (extras != null && extras.getBoolean("editar")) {
+                        //region editarServico
+                        try {
+                            if (validarCampos()) {
+                                editarServico(extras.getInt("position"), servicoNome.getText().toString(), Float.parseFloat(servicoPreco.getText().toString()), Integer.parseInt(servicoTempo.getText().toString()));
+                                finish();
+                            }
+                        } catch (Exception e) {
+                            // TODO exception code
                         }
-                    } catch (Exception e) {
-                        // TODO exception code
+                        //endregion
                     }
-                }
+                } else {
 
+                    Toast.makeText(getApplicationContext(), "Já existe um serviço com este nome.", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -93,7 +92,7 @@ public class CriarServicoActivity extends AppCompatActivity {
     }
 
     private boolean validarCampos() {
-        resultadoValidarCampos = false;
+        isCamposValidados = false;
         //Método para enviar os dados dos quatro EditTexts para DatabaseHelper.inserirDados
         //O sucesso é determinado por uma boolean
 
@@ -104,7 +103,7 @@ public class CriarServicoActivity extends AppCompatActivity {
                     !servicoPreco.getText().toString().isEmpty() &&
                     !servicoTempo.getText().toString().isEmpty()
                     ) {
-                resultadoValidarCampos = true;
+                isCamposValidados = true;
             } else {
                 Toast.makeText(getApplicationContext(), "Verifique se todos campos foram preenchidos.", Toast.LENGTH_LONG).show();
             }
@@ -114,7 +113,7 @@ public class CriarServicoActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "A validação dos campos foi mal sucedida.", Toast.LENGTH_LONG).show();
         }
 
-        return resultadoValidarCampos;
+        return isCamposValidados;
     }
 
     private void criarServico(String _servicoNome, float _servicoPreco, int _servicoTempo) {
@@ -143,5 +142,12 @@ public class CriarServicoActivity extends AppCompatActivity {
         finish();
     }
 
-
+    private boolean servicoComMesmoNome(String _servicoNome) {
+        for (Servicos servico: Dados.dadosDoSalao.getSalaoServicos()) {
+            if (_servicoNome.equals(servico.getNomeServico())) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

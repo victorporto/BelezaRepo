@@ -20,7 +20,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".SalaoServicosActivity" />
         <activity android:name=".SalaoFuncionariosActivity" />
-        <activity android:name=".CriarServicoActivity"></activity>
+        <activity android:name=".CriarServicoActivity" />
+        <activity android:name=".CriarFuncionarioActivity"></activity>
     </application>
 
 </manifest>

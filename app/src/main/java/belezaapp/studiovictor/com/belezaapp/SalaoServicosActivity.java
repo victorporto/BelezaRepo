@@ -25,7 +25,6 @@ public class SalaoServicosActivity extends AppCompatActivity {
 
     private ListView listViewServicos;
     private Button btnVoltar, btnCriarServico;
-    //private Cadastros cadastro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,9 +63,9 @@ public class SalaoServicosActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();  // Always call the superclass method first
 
-         ArrayList<Servicos> servicos = new ArrayList<Servicos>();
+        ArrayList<Servicos> servicos = new ArrayList<Servicos>();
         LstServicoAdapter adapter;
-        adapter = new LstServicoAdapter(servicos, Dados.dadosDoSalao.getSalaoNome(),SalaoServicosActivity.this);
+        adapter = new LstServicoAdapter(servicos,SalaoServicosActivity.this);
         listViewServicos.setAdapter(adapter);
 
         //Adicionando serviços na listView.
