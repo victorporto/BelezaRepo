@@ -49,13 +49,9 @@ public class SalaoFuncionariosActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Se já existirem serviços, o usuário poderá criar funcionarios.
-                if (Dados.dadosDoSalao.getSalaoServicos() != null && !Dados.dadosDoSalao.getSalaoServicos().isEmpty()) {
-                    Intent intent = new Intent(SalaoFuncionariosActivity.this, CriarFuncionarioActivity.class);
-                    intent.putExtra("editar", false);
-                    startActivity(intent);
-                } else { //Se não houver serviços já criados, o APP pedirá que o usuário crie pelo menos 1 serviço.
-                    Toast.makeText(SalaoFuncionariosActivity.this, "Crie algum serviço antes de criar um funcionário.", Toast.LENGTH_LONG).show();
-                }
+                Intent intent = new Intent(SalaoFuncionariosActivity.this, CriarFuncionarioActivity.class);
+                intent.putExtra("editar", false);
+                startActivity(intent);
             }
         });
     }

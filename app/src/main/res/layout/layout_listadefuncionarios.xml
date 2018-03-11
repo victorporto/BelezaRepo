@@ -14,6 +14,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Nome Funcionário"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/id_funcionarioBtnEditar"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +28,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="8dp"
         android:text="Intervalo"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/id_funcionarioNome" />
 
@@ -36,6 +39,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Trabalha"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_funcionarioNome" />
 
@@ -45,6 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="8:00 - 17:00"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -55,6 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="12:00 - 13:00"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -86,6 +92,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Dom    Seg    Ter    Qua    Qui    Sex    Sáb"
+        android:textColor="@android:color/white"
         android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_horarioTrabalho" />
@@ -95,62 +102,62 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:checked="false"
+        android:enabled="false"
         app:layout_constraintStart_toStartOf="@+id/id_LstFuncionariosDias"
-        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias"
-        tools:clickable="false" />
+        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias" />
 
     <CheckBox
         android:id="@+id/id_segCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
+        android:enabled="false"
         app:layout_constraintStart_toEndOf="@+id/id_domCheckBox"
-        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias"
-        tools:clickable="false" />
+        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias" />
 
     <CheckBox
         android:id="@+id/id_terCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
+        android:enabled="false"
         app:layout_constraintStart_toEndOf="@+id/id_segCheckBox"
-        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias"
-        tools:clickable="false" />
+        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias" />
 
     <CheckBox
         android:id="@+id/id_quaCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:enabled="false"
         app:layout_constraintStart_toEndOf="@+id/id_terCheckBox"
-        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias"
-        tools:clickable="false" />
+        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias" />
 
     <CheckBox
         android:id="@+id/id_quiCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:enabled="false"
         app:layout_constraintStart_toEndOf="@+id/id_quaCheckBox"
-        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias"
-        tools:clickable="false" />
+        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias" />
 
     <CheckBox
         android:id="@+id/id_sexCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
+        android:enabled="false"
         app:layout_constraintStart_toEndOf="@+id/id_quiCheckBox"
-        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias"
-        tools:clickable="false" />
+        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias" />
 
     <CheckBox
         android:id="@+id/id_sabCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
+        android:enabled="false"
         app:layout_constraintStart_toEndOf="@+id/id_sexCheckBox"
-        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias"
-        tools:clickable="false" />
+        app:layout_constraintTop_toBottomOf="@+id/id_LstFuncionariosDias" />
 
 </android.support.constraint.ConstraintLayout>

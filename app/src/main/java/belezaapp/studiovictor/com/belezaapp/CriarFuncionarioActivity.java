@@ -133,28 +133,32 @@ public class CriarFuncionarioActivity extends AppCompatActivity {
         btnCriarFuncionario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!funcionarioComMesmoNome(funcionarioNome.getText().toString())) {
+
                     if (extras != null && !extras.getBoolean("editar")) {
                         //region criarFuncionario
-                        try {
-                            if (validarCampos()) {
-                                criarFuncionario(funcionarioNome.getText().toString(),
-                                        trabalhoInicio.getText().toString(),
-                                        trabalhoFim.getText().toString(),
-                                        intervaloInicio.getText().toString(),
-                                        intervaloFim.getText().toString(),
-                                        domCheckBox.isChecked(),
-                                        segCheckBox.isChecked(),
-                                        terCheckBox.isChecked(),
-                                        quaCheckBox.isChecked(),
-                                        quiCheckBox.isChecked(),
-                                        sexCheckBox.isChecked(),
-                                        sabCheckBox.isChecked()
-                                );
-                                finish();
+                        if(!funcionarioComMesmoNome(funcionarioNome.getText().toString())) {
+                            try {
+                                if (validarCampos()) {
+                                    criarFuncionario(funcionarioNome.getText().toString(),
+                                            trabalhoInicio.getText().toString(),
+                                            trabalhoFim.getText().toString(),
+                                            intervaloInicio.getText().toString(),
+                                            intervaloFim.getText().toString(),
+                                            domCheckBox.isChecked(),
+                                            segCheckBox.isChecked(),
+                                            terCheckBox.isChecked(),
+                                            quaCheckBox.isChecked(),
+                                            quiCheckBox.isChecked(),
+                                            sexCheckBox.isChecked(),
+                                            sabCheckBox.isChecked()
+                                    );
+                                    finish();
+                                }
+                            } catch (Exception e) {
+                                // TODO exception code
                             }
-                        } catch (Exception e) {
-                            // TODO exception code
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Já existe um funcionário com este nome.", Toast.LENGTH_LONG).show();
                         }
                         //endregion
                     } else if (extras != null && extras.getBoolean("editar")) {
@@ -183,9 +187,6 @@ public class CriarFuncionarioActivity extends AppCompatActivity {
                         }
                         //endregion
                     }
-                } else {
-                    Toast.makeText(getApplicationContext(), "Já existe um funcionário com este nome.", Toast.LENGTH_LONG).show();
-                }
             }
         });
 
