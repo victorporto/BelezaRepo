@@ -4,27 +4,33 @@ import android.app.TimePickerDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.BoringLayout;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import belezaapp.studiovictor.com.belezaapp.ClassesDeDados.Funcionarios;
 import belezaapp.studiovictor.com.belezaapp.ClassesDeDados.Servicos;
 import belezaapp.studiovictor.com.belezaapp.Config.ConfigFirebase;
 import belezaapp.studiovictor.com.belezaapp.Config.Dados;
+import belezaapp.studiovictor.com.belezaapp.CustomArrayAdapters.LstServicoDoFuncionarioAdapter;
 
 public class CriarFuncionarioActivity extends AppCompatActivity {
 
     private TextView trabalhoInicio, trabalhoFim, intervaloInicio, intervaloFim;
     private CheckBox domCheckBox, segCheckBox, terCheckBox, quaCheckBox, quiCheckBox, sexCheckBox, sabCheckBox;
     private Button btnCancelar, btnCriarFuncionario;
+    private ListView listViewServicosDoFuncionario;
     private EditText funcionarioNome;
 
     private boolean isCamposValidados = false;
@@ -33,6 +39,8 @@ public class CriarFuncionarioActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_criar_funcionario);
+
+        final Bundle extras = getIntent().getExtras();
 
         //region Inicializando elementos da View
         funcionarioNome = (EditText) findViewById(R.id.id_edtFuncionarioNome);
@@ -50,14 +58,18 @@ public class CriarFuncionarioActivity extends AppCompatActivity {
         sexCheckBox = (CheckBox) findViewById(R.id.id_sexCriarFuncCheckBox);
         sabCheckBox = (CheckBox) findViewById(R.id.id_sabCriarFuncCheckBox);
 
+        listViewServicosDoFuncionario = (ListView) findViewById(R.id.id_listvServicosDoFuncionario);
+
         btnCancelar = (Button) findViewById(R.id.id_btnCancelarFunc);
         btnCriarFuncionario = (Button) findViewById(R.id.id_btnCriarFunc);
         //endregion
 
-        //region Recuperando dados enviados de outras Activities
-        //Recupera os dados que são enviados das classes 'SalaoFuncionariosActivity' ou da 'LstFuncionarioAdapter'.
-        //De maneira a determinar se o usuário deseja Editar dados ou Criar um novo Funcionario.
-        final Bundle extras = getIntent().getExtras();
+        //region Se EDITAR for true, recuperar os dados e preencher os elementos
+        ArrayList<String> servicosDoSalao = nomesServicosSalao();
+        ArrayList<String> servicosDoFuncionario = new ArrayList<String>();
+
+        final LstServicoDoFuncionarioAdapter adapter;
+
 
         if(extras != null && extras.getBoolean("editar")) {
             funcionarioNome.setText("" + Dados.dadosDoSalao.getSalaoFuncionarios().get(extras.getInt("position")).getNomeFuncionario());
@@ -72,6 +84,15 @@ public class CriarFuncionarioActivity extends AppCompatActivity {
             quiCheckBox.setChecked(Dados.dadosDoSalao.getSalaoFuncionarios().get(extras.getInt("position")).isQuinta());
             sexCheckBox.setChecked(Dados.dadosDoSalao.getSalaoFuncionarios().get(extras.getInt("position")).isSexta());
             sabCheckBox.setChecked(Dados.dadosDoSalao.getSalaoFuncionarios().get(extras.getInt("position")).isSabado());
+
+            servicosDoFuncionario = recuperarServicosDoFuncionario(extras.getInt("position"));
+
+            adapter = new LstServicoDoFuncionarioAdapter(servicosDoSalao, servicosDoFuncionario,CriarFuncionarioActivity.this);
+            listViewServicosDoFuncionario.setAdapter(adapter);
+
+        } else {
+            adapter = new LstServicoDoFuncionarioAdapter(servicosDoSalao,CriarFuncionarioActivity.this);
+            listViewServicosDoFuncionario.setAdapter(adapter);
         }
         //endregion
 
@@ -129,64 +150,84 @@ public class CriarFuncionarioActivity extends AppCompatActivity {
         });
         //endregion
 
+        //region Habilita/Desabilita o sensor Touch do ScrollView, permitindo que o ListView detecte o Touch
+        listViewServicosDoFuncionario.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                int action = motionEvent.getAction();
+                switch (action) {
+                    case MotionEvent.ACTION_DOWN:
+                        view.getParent().requestDisallowInterceptTouchEvent(true);
+                        break;
+
+                    case MotionEvent.ACTION_UP:
+                        view.getParent().requestDisallowInterceptTouchEvent(false);
+                        break;
+                }
+                view.onTouchEvent(motionEvent);
+                return true;
+            }
+        });
+        //endregion
+
         //region onClickListeners dos Buttons
         btnCriarFuncionario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                    if (extras != null && !extras.getBoolean("editar")) {
-                        //region criarFuncionario
-                        if(!funcionarioComMesmoNome(funcionarioNome.getText().toString())) {
-                            try {
-                                if (validarCampos()) {
-                                    criarFuncionario(funcionarioNome.getText().toString(),
-                                            trabalhoInicio.getText().toString(),
-                                            trabalhoFim.getText().toString(),
-                                            intervaloInicio.getText().toString(),
-                                            intervaloFim.getText().toString(),
-                                            domCheckBox.isChecked(),
-                                            segCheckBox.isChecked(),
-                                            terCheckBox.isChecked(),
-                                            quaCheckBox.isChecked(),
-                                            quiCheckBox.isChecked(),
-                                            sexCheckBox.isChecked(),
-                                            sabCheckBox.isChecked()
-                                    );
-                                    finish();
-                                }
-                            } catch (Exception e) {
-                                // TODO exception code
-                            }
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Já existe um funcionário com este nome.", Toast.LENGTH_LONG).show();
+            if (extras != null && !extras.getBoolean("editar")) {
+                //region criarFuncionario
+                if(!funcionarioComMesmoNome(funcionarioNome.getText().toString())) {
+                    try {
+                        if (validarCampos()) {
+                            criarFuncionario(funcionarioNome.getText().toString(),
+                                    trabalhoInicio.getText().toString(),
+                                    trabalhoFim.getText().toString(),
+                                    intervaloInicio.getText().toString(),
+                                    intervaloFim.getText().toString(),
+                                    domCheckBox.isChecked(),
+                                    segCheckBox.isChecked(),
+                                    terCheckBox.isChecked(),
+                                    quaCheckBox.isChecked(),
+                                    quiCheckBox.isChecked(),
+                                    sexCheckBox.isChecked(),
+                                    sabCheckBox.isChecked()
+                            );
+                            finish();
                         }
-                        //endregion
-                    } else if (extras != null && extras.getBoolean("editar")) {
-                        //region editarFuncionario
-                        try {
-                            if (validarCampos()) {
-                                editarFuncionario(extras.getInt("position"),
-                                        funcionarioNome.getText().toString(),
-                                        trabalhoInicio.getText().toString(),
-                                        trabalhoFim.getText().toString(),
-                                        intervaloInicio.getText().toString(),
-                                        intervaloFim.getText().toString(),
-                                        domCheckBox.isChecked(),
-                                        segCheckBox.isChecked(),
-                                        terCheckBox.isChecked(),
-                                        quaCheckBox.isChecked(),
-                                        quiCheckBox.isChecked(),
-                                        sexCheckBox.isChecked(),
-                                        sabCheckBox.isChecked()
-                                );
-                                finish();
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            // TODO exception code
-                        }
-                        //endregion
+                    } catch (Exception e) {
+                        // TODO exception code
                     }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Já existe um funcionário com este nome.", Toast.LENGTH_LONG).show();
+                }
+                //endregion
+            } else if (extras != null && extras.getBoolean("editar")) {
+                //region editarFuncionario
+                try {
+                    if (validarCampos()) {
+                        editarFuncionario(extras.getInt("position"),
+                                funcionarioNome.getText().toString(),
+                                trabalhoInicio.getText().toString(),
+                                trabalhoFim.getText().toString(),
+                                intervaloInicio.getText().toString(),
+                                intervaloFim.getText().toString(),
+                                domCheckBox.isChecked(),
+                                segCheckBox.isChecked(),
+                                terCheckBox.isChecked(),
+                                quaCheckBox.isChecked(),
+                                quiCheckBox.isChecked(),
+                                sexCheckBox.isChecked(),
+                                sabCheckBox.isChecked()
+                        );
+                        finish();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    // TODO exception code
+                }
+                //endregion
+            }
             }
         });
 
@@ -197,6 +238,26 @@ public class CriarFuncionarioActivity extends AppCompatActivity {
             }
         });
         //endregion
+    }
+
+    private ArrayList<String> nomesServicosSalao() {
+        ArrayList<String> listaServicos = new ArrayList<String>();
+        if(Dados.dadosDoSalao.getSalaoServicos() != null && !Dados.dadosDoSalao.getSalaoServicos().isEmpty()) {
+            for (Servicos _servico : Dados.dadosDoSalao.getSalaoServicos()) {
+                listaServicos.add(_servico.getNomeServico());
+            }
+        }
+        return listaServicos;
+    }
+
+    private ArrayList<String> recuperarServicosDoFuncionario(int _position) {
+        ArrayList<String> _servicosDoFuncionario = new ArrayList<String>();
+        if (Dados.dadosDoSalao.getSalaoFuncionarios().get(_position).getServicosFuncionario() != null
+                && !Dados.dadosDoSalao.getSalaoFuncionarios().get(_position).getServicosFuncionario().isEmpty())
+        {
+            _servicosDoFuncionario = Dados.dadosDoSalao.getSalaoFuncionarios().get(_position).getServicosFuncionario();
+        }
+        return _servicosDoFuncionario;
     }
 
     private boolean validarCampos() {

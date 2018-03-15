@@ -456,6 +456,10 @@
         "source": "D:\\AndroidProjects\\BelezaApp1\\app\\src\\main\\res\\layout\\activity_criar_conta.xml"
     },
     {
+        "merged": "C:\\Users\\Victor\\AndroidStudioProjects\\BelezaApp1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_listadeservicosdofuncionario.xml",
+        "source": "C:\\Users\\Victor\\AndroidStudioProjects\\BelezaApp1\\app\\src\\main\\res\\layout\\layout_listadeservicosdofuncionario.xml"
+    },
+    {
         "merged": "C:\\Users\\Victor\\AndroidStudioProjects\\BelezaApp1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
         "source": "C:\\Users\\Victor\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\7ae63436045a5b693e067431427ff98d\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },

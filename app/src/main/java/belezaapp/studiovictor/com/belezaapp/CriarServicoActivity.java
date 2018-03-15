@@ -51,34 +51,34 @@ public class CriarServicoActivity extends AppCompatActivity {
         btnCriarServico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+            if (extras != null && !extras.getBoolean("editar")) {
+                //region criarServico
                 if(!servicoComMesmoNome(servicoNome.getText().toString())) {
-                    if (extras != null && !extras.getBoolean("editar")) {
-                        //region criarServico
-                        try {
-                            if (validarCampos()) {
-                                criarServico(servicoNome.getText().toString(), Float.parseFloat(servicoPreco.getText().toString()), Integer.parseInt(servicoTempo.getText().toString()));
-                                finish();
-                            }
-                        } catch (Exception e) {
-                            // TODO exception code
+                    try {
+                        if (validarCampos()) {
+                            criarServico(servicoNome.getText().toString(), Float.parseFloat(servicoPreco.getText().toString()), Integer.parseInt(servicoTempo.getText().toString()));
+                            finish();
                         }
-                        //endregion
-                    } else if (extras != null && extras.getBoolean("editar")) {
-                        //region editarServico
-                        try {
-                            if (validarCampos()) {
-                                editarServico(extras.getInt("position"), servicoNome.getText().toString(), Float.parseFloat(servicoPreco.getText().toString()), Integer.parseInt(servicoTempo.getText().toString()));
-                                finish();
-                            }
-                        } catch (Exception e) {
-                            // TODO exception code
-                        }
-                        //endregion
+                    } catch (Exception e) {
+                        // TODO exception code
                     }
                 } else {
-
                     Toast.makeText(getApplicationContext(), "Já existe um serviço com este nome.", Toast.LENGTH_LONG).show();
                 }
+                //endregion
+            } else if (extras != null && extras.getBoolean("editar")) {
+                //region editarServico
+                try {
+                    if (validarCampos()) {
+                        editarServico(extras.getInt("position"), servicoNome.getText().toString(), Float.parseFloat(servicoPreco.getText().toString()), Integer.parseInt(servicoTempo.getText().toString()));
+                        finish();
+                    }
+                } catch (Exception e) {
+                    // TODO exception code
+                }
+                //endregion
+            }
             }
         });
 
