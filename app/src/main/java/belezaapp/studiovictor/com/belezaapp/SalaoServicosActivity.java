@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -25,6 +26,7 @@ public class SalaoServicosActivity extends AppCompatActivity {
 
     private ListView listViewServicos;
     private Button btnVoltar, btnCriarServico;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,8 @@ public class SalaoServicosActivity extends AppCompatActivity {
         final ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+        toolbar = (Toolbar) findViewById(R.id.id_toolbarListaServicos);
+        toolbar.setTitle("Lista de Serviços");
 
         listViewServicos = (ListView) findViewById(R.id.id_listvServicos);
         btnVoltar = (Button) findViewById(R.id.id_btnVoltar);

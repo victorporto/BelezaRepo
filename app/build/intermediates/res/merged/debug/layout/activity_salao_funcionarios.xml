@@ -19,6 +19,10 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="81dp">
 
+        <include
+            android:id="@+id/id_toolbarListaFuncionarios"
+            layout="@layout/toolbar" />
+
         <Button
             android:id="@+id/id_btnCriarFuncionario"
             android:layout_width="wrap_content"
@@ -39,10 +43,6 @@
             app:layout_constraintEnd_toStartOf="@+id/id_btnCriarFuncionario"
             app:layout_constraintTop_toBottomOf="@+id/id_listvFuncionarios" />
 
-        <include
-            android:id="@+id/id_toolbarFunc"
-            layout="@layout/toolbar" />
-
         <ListView
             android:id="@+id/id_listvFuncionarios"
             android:layout_width="match_parent"
@@ -53,7 +53,7 @@
             android:background="#FF653E95"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/id_toolbarFunc" />
+            app:layout_constraintTop_toBottomOf="@+id/id_toolbarListaFuncionarios" />
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

@@ -4,6 +4,7 @@ import android.os.Debug;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +23,7 @@ public class CriarServicoActivity extends AppCompatActivity {
     private Button btnCancelar, btnCriarServico;
     private EditText servicoNome, servicoPreco, servicoTempo;
     private boolean isCamposValidados = false;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,9 @@ public class CriarServicoActivity extends AppCompatActivity {
         //Esconde a 'ActionBar'
         final ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+
+        toolbar = (Toolbar) findViewById(R.id.id_toolbarCriarServico);
+        toolbar.setTitle("Serviço");
 
         btnCancelar = (Button) findViewById(R.id.id_btnVoltar);
         btnCriarServico = (Button) findViewById(R.id.id_btnCriarServico);
@@ -143,9 +148,11 @@ public class CriarServicoActivity extends AppCompatActivity {
     }
 
     private boolean servicoComMesmoNome(String _servicoNome) {
-        for (Servicos servico: Dados.dadosDoSalao.getSalaoServicos()) {
-            if (_servicoNome.equals(servico.getNomeServico())) {
-                return true;
+        if(Dados.dadosDoSalao.getSalaoServicos() != null && !Dados.dadosDoSalao.getSalaoServicos().isEmpty()) {
+            for (Servicos servico : Dados.dadosDoSalao.getSalaoServicos()) {
+                if (_servicoNome.equals(servico.getNomeServico())) {
+                    return true;
+                }
             }
         }
         return false;

@@ -1,8 +1,10 @@
 package belezaapp.studiovictor.com.belezaapp;
 
 import android.app.TimePickerDialog;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.BoringLayout;
 import android.view.MotionEvent;
 import android.view.View;
@@ -32,13 +34,25 @@ public class CriarFuncionarioActivity extends AppCompatActivity {
     private Button btnCancelar, btnCriarFuncionario;
     private ListView listViewServicosDoFuncionario;
     private EditText funcionarioNome;
+    private ArrayList<String> servicosDoSalao = nomesServicosSalao();
+    private ArrayList<String> servicosDoFuncionario = new ArrayList<String>();
+    //Os dois ArrayLists são utilizados pela classe LstServicoDoFuncionarioAdapter.
+    public static ArrayList<String> servicosAdicionados = new ArrayList<String>();
+    public static ArrayList<String> servicosRemovidos = new ArrayList<String>();
 
     private boolean isCamposValidados = false;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_criar_funcionario);
+        //Esconde a 'ActionBar'
+        final ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        toolbar = (Toolbar) findViewById(R.id.id_toolbarCriarFuncionario);
+        toolbar.setTitle("Funcionário");
 
         final Bundle extras = getIntent().getExtras();
 
@@ -65,8 +79,7 @@ public class CriarFuncionarioActivity extends AppCompatActivity {
         //endregion
 
         //region Se EDITAR for true, recuperar os dados e preencher os elementos
-        ArrayList<String> servicosDoSalao = nomesServicosSalao();
-        ArrayList<String> servicosDoFuncionario = new ArrayList<String>();
+
 
         final LstServicoDoFuncionarioAdapter adapter;
 
@@ -93,6 +106,7 @@ public class CriarFuncionarioActivity extends AppCompatActivity {
         } else {
             adapter = new LstServicoDoFuncionarioAdapter(servicosDoSalao,CriarFuncionarioActivity.this);
             listViewServicosDoFuncionario.setAdapter(adapter);
+            listViewServicosDoFuncionario.getItemIdAtPosition(0);
         }
         //endregion
 
@@ -297,7 +311,7 @@ public class CriarFuncionarioActivity extends AppCompatActivity {
                                   Boolean _sex,
                                   Boolean _sab) {
 
-        ArrayList<String> _servicos = new ArrayList<String>();
+        ArrayList<String> _servicos = servicosAdicionados;
         Funcionarios funcionario = new Funcionarios(_funcionarioNome,
                                                     _servicos,
                                                     _dom,
@@ -341,7 +355,9 @@ public class CriarFuncionarioActivity extends AppCompatActivity {
                                    Boolean _sex,
                                    Boolean _sab) {
 
-        ArrayList<String> _servicos = new ArrayList<String>();
+        ArrayList<String> _servicos = servicosDoFuncionario;
+        _servicos = adicionarServicos(_servicos, servicosAdicionados);
+        _servicos = removerServicos(_servicos, servicosRemovidos);
         Funcionarios funcionario = new Funcionarios(_funcionarioNome,
                                                     _servicos,
                                                     _dom,
@@ -364,12 +380,30 @@ public class CriarFuncionarioActivity extends AppCompatActivity {
     }
 
     private boolean funcionarioComMesmoNome(String _funcionarioNome) {
-        for (Funcionarios funcionario: Dados.dadosDoSalao.getSalaoFuncionarios()) {
-            if (_funcionarioNome.equals(funcionario.getNomeFuncionario())) {
-                return true;
+        if(Dados.dadosDoSalao.getSalaoFuncionarios() != null && !Dados.dadosDoSalao.getSalaoFuncionarios().isEmpty()) {
+            for (Funcionarios funcionario : Dados.dadosDoSalao.getSalaoFuncionarios()) {
+                if (_funcionarioNome.equals(funcionario.getNomeFuncionario())) {
+                    return true;
+                }
             }
         }
         return false;
+    }
+
+    private ArrayList<String> adicionarServicos(ArrayList<String> _servicos, ArrayList<String> _servicosAAdicionar) {
+        for (String _servico : _servicosAAdicionar) {
+            if(!_servicos.contains(_servico)){
+                _servicos.add(_servico);
+            }
+        }
+        return _servicos;
+    }
+
+    private ArrayList<String> removerServicos(ArrayList<String> _servicos, ArrayList<String> _servicosARemover) {
+        for (String _servico : _servicosARemover){
+            _servicos.remove(_servico);
+        }
+        return _servicos;
     }
 
 }

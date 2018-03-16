@@ -19,7 +19,7 @@
         tools:layout_editor_absoluteY="81dp">
 
         <include
-            android:id="@+id/id_toolbar"
+            android:id="@+id/id_toolbarMain"
             layout="@layout/toolbar" />
 
         <TextView
@@ -118,7 +118,7 @@
             android:text="Serviços: "
             android:textAlignment="textStart"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/id_toolbar" />
+            app:layout_constraintTop_toBottomOf="@+id/id_toolbarMain" />
 
         <Button
             android:id="@+id/id_btnLogOut"
@@ -146,7 +146,7 @@
             android:textAlignment="textStart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/id_btnServicos"
-            app:layout_constraintTop_toBottomOf="@+id/id_toolbar" />
+            app:layout_constraintTop_toBottomOf="@+id/id_toolbarMain" />
 
 
     </android.support.constraint.ConstraintLayout>

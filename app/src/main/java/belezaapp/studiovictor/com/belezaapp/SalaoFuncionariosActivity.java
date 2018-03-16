@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -21,6 +22,7 @@ public class SalaoFuncionariosActivity extends AppCompatActivity {
 
     private ListView listViewFuncionarios;
     private Button btnVoltarFuncionario, btnCriarFuncionario;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,8 @@ public class SalaoFuncionariosActivity extends AppCompatActivity {
         final ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+        toolbar = (Toolbar) findViewById(R.id.id_toolbarListaFuncionarios);
+        toolbar.setTitle("Lista de Funcionários");
 
         listViewFuncionarios = (ListView) findViewById(R.id.id_listvFuncionarios);
         btnVoltarFuncionario = (Button) findViewById(R.id.id_btnVoltarFuncionario);

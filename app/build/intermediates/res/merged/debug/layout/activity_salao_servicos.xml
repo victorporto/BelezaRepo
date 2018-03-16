@@ -20,6 +20,10 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="81dp">
 
+        <include
+            android:id="@+id/id_toolbarListaServicos"
+            layout="@layout/toolbar" />
+
         <Button
             android:id="@+id/id_btnCriarServico"
             android:layout_width="wrap_content"
@@ -40,10 +44,6 @@
             app:layout_constraintEnd_toStartOf="@+id/id_btnCriarServico"
             app:layout_constraintTop_toBottomOf="@+id/id_listvServicos" />
 
-        <include
-            android:id="@+id/id_toolbar2"
-            layout="@layout/toolbar" />
-
         <ListView
             android:id="@+id/id_listvServicos"
             android:layout_width="match_parent"
@@ -54,7 +54,7 @@
             android:background="#FF653E95"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/id_toolbar2" />
+            app:layout_constraintTop_toBottomOf="@+id/id_toolbarListaServicos" />
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import belezaapp.studiovictor.com.belezaapp.ClassesDeDados.Servicos;
 import belezaapp.studiovictor.com.belezaapp.Config.ConfigFirebase;
 import belezaapp.studiovictor.com.belezaapp.Config.Dados;
+import belezaapp.studiovictor.com.belezaapp.CriarFuncionarioActivity;
 import belezaapp.studiovictor.com.belezaapp.CriarServicoActivity;
 import belezaapp.studiovictor.com.belezaapp.R;
 
@@ -75,14 +77,38 @@ public class LstServicoDoFuncionarioAdapter extends BaseAdapter implements ListA
         }
 
         //Handle TextView and display string from your list
-        TextView nomeServicoDoFuncionario = (TextView)view.findViewById(R.id.id_NomeServicoDoFuncionario);
-        CheckBox checkBoxServicoDoFuncionario = (CheckBox) view.findViewById(R.id.id_checkBoxServicoDoFuncionario);
+        final TextView nomeServicoDoFuncionario = (TextView)view.findViewById(R.id.id_NomeServicoDoFuncionario);
+        final CheckBox checkBoxServicoDoFuncionario = (CheckBox) view.findViewById(R.id.id_checkBoxServicoDoFuncionario);
 
         nomeServicoDoFuncionario.setText(listaServicosDoSalao.get(position));
 
         if(listaServicosDoFuncionario != null && !listaServicosDoFuncionario.isEmpty()){
             checkBoxServicoDoFuncionario.setChecked(marcarCheckBox(nomeServicoDoFuncionario.getText().toString()));
         }
+
+        //region Verificações do CheckBox.
+        //Verifica se o CheckBox foi clicado. Se sim, verifica se o check
+        checkBoxServicoDoFuncionario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(checkBoxServicoDoFuncionario.isChecked()) {
+                    if(!CriarFuncionarioActivity.servicosAdicionados.contains(nomeServicoDoFuncionario.getText().toString())){
+                        CriarFuncionarioActivity.servicosAdicionados.add(nomeServicoDoFuncionario.getText().toString());
+                        CriarFuncionarioActivity.servicosRemovidos.remove(nomeServicoDoFuncionario.getText().toString());
+                    } else {
+                        CriarFuncionarioActivity.servicosRemovidos.remove(nomeServicoDoFuncionario.getText().toString());
+                    }
+                } else {
+                    if(!CriarFuncionarioActivity.servicosRemovidos.contains(nomeServicoDoFuncionario.getText().toString())){
+                        CriarFuncionarioActivity.servicosRemovidos.add(nomeServicoDoFuncionario.getText().toString());
+                        CriarFuncionarioActivity.servicosAdicionados.remove(nomeServicoDoFuncionario.getText().toString());
+                    } else {
+                        CriarFuncionarioActivity.servicosAdicionados.remove(nomeServicoDoFuncionario.getText().toString());
+                    }
+                }
+            }
+        });
+        //endregion
 
         return view;
     }
